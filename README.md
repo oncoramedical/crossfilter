@@ -23,6 +23,8 @@ This package can be found under the name `crossfilter2` in npm:
      
 ## Development
 
+Install Node 8.X (version of `vow` used does not work with Node 10).
+
 Install dependencies:
 
  * `npm install`

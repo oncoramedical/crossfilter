@@ -174,7 +174,7 @@ crossfilter_bitarray.prototype.onlyExcept = function(n, offset, zero, onlyOffset
     mask = this[i][n];
     if (i === offset)
       mask &= zero;
-    if (mask != (i === onlyOffset ? onlyOne : 0)) {
+    if (Math.abs(mask) != (i === onlyOffset ? onlyOne : 0)) {
       return false;
     }
   }
