@@ -2,7 +2,7 @@
 module.exports = require("./src/crossfilter").crossfilter;
 
 },{"./src/crossfilter":6}],2:[function(require,module,exports){
-(function (global){
+(function (global){(function (){
 /**
  * lodash (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
@@ -936,7 +936,7 @@ function result(object, path, defaultValue) {
 
 module.exports = result;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],3:[function(require,module,exports){
 module.exports={"version":"1.4.8"}
 },{}],4:[function(require,module,exports){
@@ -1115,7 +1115,7 @@ crossfilter_bitarray.prototype.onlyExcept = function(n, offset, zero, onlyOffset
   for (i = 0, len = this.subarrays; i < len; ++i) {
     mask = this[i][n];
     if (i === offset)
-      mask &= zero;
+      mask = (mask & zero) >>> 0;
     if (mask != (i === onlyOffset ? onlyOne : 0)) {
       return false;
     }
